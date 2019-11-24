@@ -12,9 +12,6 @@ class User extends CI_Controller {
       redirect('login');
       }
     
-    if($this->session->userdata('status')==2) {
-      redirect('user');
-      }
   }
 
   public function index()

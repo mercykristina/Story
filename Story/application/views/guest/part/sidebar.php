@@ -2,7 +2,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo site_url('Guest') ?>">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo site_url('user') ?>">
         <div class="sidebar-brand-icon">
           <img src="<?php echo base_url('img/logo.png') ?>" style="width:80px; margin-right:20px">
         </div>
@@ -21,6 +21,13 @@
       <!-- Divider -->
       <hr class="sidebar-divider">
 
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo site_url('Products_guest') ?>">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Story</span></a>
+        </a>
+      </li>
+
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item <?php echo $this->uri->segment(2) == 'products' ? 'active': '' ?>">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -29,15 +36,14 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header" href="<?php echo site_url('guest/products/add') ?>">Genre</h6>
-            <a class="collapse-item" href="<?php echo site_url('guest/products') ?>">Action</a>
-            <a class="collapse-item" href="cards.html">Adventure</a>
+            <h6 class="collapse-header" href="">Genre</h6>
+            <a class="collapse-item" href="">Action</a>
+            <a class="collapse-item" href="">Adventure</a>
             <a class="collapse-item" href="cards.html">Comedy</a>
             <a class="collapse-item" href="cards.html">Fiction</a>
             <a class="collapse-item" href="cards.html">History</a>
             <a class="collapse-item" href="cards.html">Horror</a>
             <a class="collapse-item" href="cards.html">Romance</a>
-            <a class="collapse-item" href="cards.html">Science Fiction</a>
           </div>
         </div>
       </li>
@@ -72,6 +78,7 @@
         </a>
       </li>
 
+      
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 

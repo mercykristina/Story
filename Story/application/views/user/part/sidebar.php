@@ -21,6 +21,13 @@
       <!-- Divider -->
       <hr class="sidebar-divider">
 
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo site_url('Products') ?>">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Story</span></a>
+        </a>
+      </li>
+
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item <?php echo $this->uri->segment(2) == 'products' ? 'active': '' ?>">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -29,15 +36,14 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header" href="<?php echo site_url('guest/products/add') ?>">Genre</h6>
-            <a class="collapse-item" href="<?php echo site_url('guest/products') ?>">Action</a>
-            <a class="collapse-item" href="cards.html">Adventure</a>
+            <h6 class="collapse-header" href="">Genre</h6>
+            <a class="collapse-item" href="">Action</a>
+            <a class="collapse-item" href="">Adventure</a>
             <a class="collapse-item" href="cards.html">Comedy</a>
             <a class="collapse-item" href="cards.html">Fiction</a>
             <a class="collapse-item" href="cards.html">History</a>
             <a class="collapse-item" href="cards.html">Horror</a>
             <a class="collapse-item" href="cards.html">Romance</a>
-            <a class="collapse-item" href="cards.html">Science Fiction</a>
           </div>
         </div>
       </li>
@@ -66,12 +72,13 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Login') ?>">
+        <a class="nav-link" href="<?php echo site_url('Products/add') ?>">
           <i class="fas fa-fw fa-pen"></i>
           <span>Create Story</span></a>
         </a>
       </li>
 
+      
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 

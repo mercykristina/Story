@@ -18,17 +18,9 @@ class Login extends CI_Controller
                 $data = [
                     'username' => $result->username,
                     'nama' => $result->nama,
-                    'level' => $result->level
                 ];
-                
                 $this->session->set_userdata($data);
-                
-                if($result->level==='1'){
-                    redirect('admin');
-                }
-                else if($result->level==='2'){
-                    redirect('user');
-                }
+                redirect('user');
             } else {
                 $this->session->set_flashdata('flash_data', 'Username or password is wrong!');
                 redirect('login');
