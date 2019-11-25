@@ -30,14 +30,14 @@
         <div class="container-fluid">
 				<!-- DataTables -->
     			<div class="row">
-    				<?php foreach ($products as $product) {?>
+    				<?php foreach ($genre as $product): ?>
                   <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100">
-                      <a href="#"><img class="card-img-top" src="<?=base_url();?>img/upload/<?=$product->id_cerita;?>.jpg" alt=""></a>
+                      <a href="#"><img class="card-img-top" src="<?php echo base_url('img/upload/'.$product->image) ?>" alt=""></a>
                       <div class="card-body">
                       	
                         <h4 class="card-title">
-                          <a href="<?=base_url();?>Products/post_details/<?=$product->id_cerita;?>"><?=$product->judul;?></a>
+                          <a href="<?php echo site_url('Post') ?>"><?php echo $product->judul ?></a>
                         </h4>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -45,14 +45,14 @@
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
 
-                        <p><?=$product->genre;?></p>
-                        <p><?=$product->tahun;?></p>
+                        <p><?php echo $product->penulis ?></p>
+                        <p><?php echo $product->tahun ?></p>
                         
                         
                       </div>
                     </div>
                   </div>
-    					<?php }?>
+    					<?php endforeach; ?>
             </div>
             
             <!-- /.row -->
@@ -84,6 +84,12 @@
   <!-- Bootstrap core JavaScript-->
   <?php $this->load->view("user/part/js.php") ?>
 
+<script>
+function deleteConfirm(url){
+	$('#btn-delete').attr('href', url);
+	$('#deleteModal').modal();
+}
+</script>
 
 </body>
 

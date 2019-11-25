@@ -4,7 +4,14 @@
 <head>
 
   <?php $this->load->view("guest/part/head.php") ?>
-
+<style>
+  .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
 </head>
 
 <body id="page-top">
@@ -28,30 +35,33 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-				<!-- DataTables -->
-			<div class="row">
-				<?php foreach ($products as $product): ?>
-              <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                  <a href="#"><img class="card-img-top" src="<?php echo base_url('img/upload/'.$product->image) ?>" alt=""></a>
-                  <div class="card-body">
-                  	
-                    <h4 class="card-title">
-                      <a href="<?php echo site_url('Products/view') ?>"><?php echo $product->judul ?></a>
-                    </h4>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
+        <!-- DataTables -->
+          <div class="row">
+            <?php foreach ($products as $product) {?>
+                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100">
+                      <a href="#"><img class="card-img-top" src="<?=base_url();?>img/upload/<?=$product->id_cerita;?>.jpg" alt="" style="width:238px;height:150px;"></a>
+                      <div class="card-body">
+                        
+                        <h4 class="card-title">
+                          <a><?=$product->judul;?></a>
+                        </h4>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
 
-                    <p><?php echo $product->genre ?></p>
-                    <p><?php echo $product->tahun ?></p>
-                    
+                        <p><?=$product->genre;?></p>
+                        <p><?=$product->tahun;?></p>
+                        
+                        <a class="btn btn-primary center" href="<?php echo site_url('Login') ?>" role="button" disabled>Read Now</a>
+                        
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-					<?php endforeach; ?>
+
+              <?php }?>
             </div>
             
             <!-- /.row -->
@@ -82,13 +92,6 @@
 
   <!-- Bootstrap core JavaScript-->
   <?php $this->load->view("guest/part/js.php") ?>
-
-<script>
-function deleteConfirm(url){
-	$('#btn-delete').attr('href', url);
-	$('#deleteModal').modal();
-}
-</script>
 
 </body>
 

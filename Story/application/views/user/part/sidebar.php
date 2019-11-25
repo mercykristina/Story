@@ -29,25 +29,13 @@
       </li>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item <?php echo $this->uri->segment(2) == 'products' ? 'active': '' ?>">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="GenreModal('<?php echo site_url() ?>')" >
           <i class="fas fa-fw fa-globe"></i>
           <span>Genre</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header" href="">Genre</h6>
-            <a class="collapse-item" href="">Action</a>
-            <a class="collapse-item" href="">Adventure</a>
-            <a class="collapse-item" href="cards.html">Comedy</a>
-            <a class="collapse-item" href="cards.html">Fiction</a>
-            <a class="collapse-item" href="cards.html">History</a>
-            <a class="collapse-item" href="cards.html">Horror</a>
-            <a class="collapse-item" href="cards.html">Romance</a>
-          </div>
-        </div>
       </li>
-
+  
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
