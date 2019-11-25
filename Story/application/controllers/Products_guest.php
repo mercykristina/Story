@@ -16,5 +16,12 @@ class Products_guest extends CI_Controller
         $this->load->view("guest/list", $data);
     }
 
+    public function post_details($id_cerita=NULL){
+        $produk = array(
+          'data' => $this->Product_model->get_data_bykode($id_cerita)
+        );
+        $this->load->view('guest/post_details',$produk);
+    }
+
 
 }
