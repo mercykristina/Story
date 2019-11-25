@@ -7,12 +7,12 @@ class Products_guest extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model("product_model");
+        $this->load->model("Product_model");
     }
 
     public function index()
     {
-        $data["products"] = $this->product_model->getAll();
+        $data["products"] = $this->Product_model->getAll();
         $this->load->view("guest/list", $data);
     }
 
@@ -20,7 +20,7 @@ class Products_guest extends CI_Controller
         $produk = array(
           'data' => $this->Product_model->get_data_bykode($id_cerita)
         );
-        $this->load->view('guest/post_details',$produk);
+        $this->load->view('guest/Post_details',$produk);
     }
 
 

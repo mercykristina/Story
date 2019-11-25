@@ -45,11 +45,5 @@ class Products extends CI_Controller
         $this->load->view("user/product/new_form");
     }
 
-    public function view()
-    {
-        $data["views"] = $this->Product_model->getAll();
-        $this->load->view("user/product/view", $data);
-    }
-
 
 }

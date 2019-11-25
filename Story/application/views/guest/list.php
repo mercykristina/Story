@@ -44,7 +44,7 @@
                       <div class="card-body">
                         
                         <h4 class="card-title">
-                          <a><?=$product->judul;?></a>
+                          <a href="<?=base_url();?>Products_guest/post_details/<?=$product->id_cerita;?>"><?=$product->judul;?></a>
                         </h4>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -54,8 +54,6 @@
 
                         <p><?=$product->genre;?></p>
                         <p><?=$product->tahun;?></p>
-                        
-                        <a class="btn btn-primary center" href="<?php echo site_url('Login') ?>" role="button" disabled>Read Now</a>
                         
                       </div>
                     </div>
