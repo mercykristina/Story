@@ -4,16 +4,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Products extends CI_Controller
 {
+
+    public $query;
+    public $id_cerita;
+
     public function __construct()
     {
         parent::__construct();
-        $this->load->model("Product_model");
+        $this->load->model("Product_model"); 
+        $this->load->model("Rating_model");
         $this->load->library('form_validation');
     }
 
     public function index()
     {
-        $data["products"] = $this->Product_model->getAll();
+        $this->query =  $this->input->get('q');
+
+        $data["products"] = $this->Product_model->getAll($this->query);
         $this->load->view("user/product/list", $data);
     }
 
@@ -25,103 +32,55 @@ class Products extends CI_Controller
     }
 
     public function readnow($id_cerita=NULL){
+        if(empty($this->session->userdata('username'))) {
+          $this->session->set_flashdata('flash_data', 'Please Login First!');
+          return redirect('login');
+        }
+
+        $this->id_cerita = $id_cerita;
+
         $produk = array(
           'read' => $this->Product_model->get_data_bykode($id_cerita)
         );
         $this->load->view('user/product/readnow',$produk);
     }
 
+    public function addRating($id_cerita=NULL){
+      if($_POST) {
+                $rating = $this->Rating_model;
+                $validation = $this->form_validation;
+                $validation->set_rules($rating->rules());
+
+                if ($validation->run()) {
+                    $id_user = $this->session->userdata('id_user');
+                    $rating->save($id_user,$id_cerita);
+                    $this->session->set_flashdata('success', 'Berhasil disimpan');
+                }
+                redirect("/story/read/".$id_cerita);
+       }
+    
+    }
+
+
+
     public function add()
-    {
-        $product = $this->Product_model;
-        $validation = $this->form_validation;
-        $validation->set_rules($product->rules());
+    {  
+        if(empty($this->session->userdata('username'))) {
+          $this->session->set_flashdata('flash_data', 'Please Login First!');
+          redirect('login');
+        }else{
+            if($_POST) {
+                $product = $this->Product_model;
+                $validation = $this->form_validation;
+                $validation->set_rules($product->rules());
 
-        if ($validation->run()) {
-            $product->save();
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
+                if ($validation->run()) {
+                    $product->save();
+                    $this->session->set_flashdata('success', 'Berhasil disimpan');
+                }
+            }
+        
+            $this->load->view("user/product/new_form");
         }
-
-        $this->load->view("user/product/new_form");
-    }
-
-    public function genreAction($genre=NULL)
-    {
-        $data = array(
-          'genre' => $this->Product_model->genreAction($genre)
-        );
-        $this->load->view('user/product/list_genre_action',$data);
-    }
-
-    public function genreAdventure($genre=NULL)
-    {
-        $data = array(
-          'genre' => $this->Product_model->genreAdventure($genre)
-        );
-        $this->load->view('user/product/list_genre_adventure',$data);
-    }
-
-    public function genreComedy($genre=NULL)
-    {
-        $data = array(
-          'genre' => $this->Product_model->genreComedy($genre)
-        );
-        $this->load->view('user/product/list_genre_comedy',$data);
-    }
-
-    public function genreFiction($genre=NULL)
-    {
-        $data = array(
-          'genre' => $this->Product_model->genreFiction($genre)
-        );
-        $this->load->view('user/product/list_genre_fiction',$data);
-    }
-
-    public function genreHistory($genre=NULL)
-    {
-        $data = array(
-          'genre' => $this->Product_model->genreHistory($genre)
-        );
-        $this->load->view('user/product/list_genre_history',$data);
-    }
-
-    public function genreHorror($genre=NULL)
-    {
-        $data = array(
-          'genre' => $this->Product_model->genreHorror($genre)
-        );
-        $this->load->view('user/product/list_genre_horror',$data);
-    }
-
-    public function genreRomance($genre=NULL)
-    {
-        $data = array(
-          'genre' => $this->Product_model->genreRomance($genre)
-        );
-        $this->load->view('user/product/list_genre_romance',$data);
-    }
-
-    public function tahun2019($tahun=NULL)
-    {
-        $data = array(
-          'tahun' => $this->Product_model->tahun2019($tahun)
-        );
-        $this->load->view('user/product/list_2019',$data);
-    }
-
-    public function tahun2018($tahun=NULL)
-    {
-        $data = array(
-          'tahun' => $this->Product_model->tahun2018($tahun)
-        );
-        $this->load->view('user/product/list_2018',$data);
-    }
-
-    public function tahun2017krg($tahun=NULL)
-    {
-        $data = array(
-          'tahun' => $this->Product_model->tahun2017krg($tahun)
-        );
-        $this->load->view('user/product/list_2017krg',$data);
     }
 }

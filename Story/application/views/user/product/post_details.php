@@ -4,6 +4,7 @@
 <head>
 
   <?php $this->load->view("user/part/head.php") ?>
+  
 <style>
   .center {
   display: block;
@@ -26,7 +27,7 @@
     <!-- Content Wrapper -->
     <div id="content-wrapper">
 
-      <!-- Main Content -->
+      <!-- Main Content --> 
       <div id="content">
 
         <!-- Topbar -->
@@ -44,7 +45,7 @@
           <div class="row">
 
             <div class="col-md-5">
-              <img class="img-fluid center" src="<?=base_url();?>img/upload/<?=$data->id_cerita;?>.jpg" alt="" style="width:300px;height:300px;">
+              <img class="img-fluid center" src="<?=base_url();?>img/upload/<?=$data->image;?>" alt="" style="width:300px;height:300px;">
             </div>
 
             <div class="col-md-5">
@@ -59,23 +60,26 @@
               <span class="fa fa-star"></span>
               <br>
               <br>
-              <a href="<?=base_url();?>Products/readnow/<?=$data->id_cerita;?>" class="btn btn-primary" role="button">Read Now</a>
+              <a href="<?=base_url();?>story/read/<?=$data->id_cerita;?>" class="btn btn-primary" role="button">Read Now</a>
             </div>
-            
-            <div>
+          
+        
+          </div>
+           <div>
               <br>
               <h3 class="my-3" style="color:MidnightBlue;">Synopsis</h3>
               <h6 class="my-3" style="color:Black;"><?=$data->sinopsis;?></h6>
             </div>
-            <?php } ?>
-          </div>
           <!-- /.row -->
           
-
+          <?php } ?>
           <!-- /.container -->
 
         </div>
         <!-- /.container-fluid -->
+
+
+
 
       </div>
       <!-- End of Main Content -->

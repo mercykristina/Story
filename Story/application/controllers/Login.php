@@ -18,15 +18,16 @@ class Login extends CI_Controller
                 $data = [
                     'username' => $result->username,
                     'nama' => $result->nama,
+                    'id_user' => $result->id_user
                 ];
                 $this->session->set_userdata($data);
-                redirect('user');
+                redirect('');
             } else {
                 $this->session->set_flashdata('flash_data', 'Username or password is wrong!');
                 redirect('login');
             }
+        }else{
+            $this->load->view("register/login");
         }
- 
-        $this->load->view("register/login");
     }
 }

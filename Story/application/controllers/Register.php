@@ -8,7 +8,8 @@ class Register extends CI_Controller {
     $this->load->library("form_validation");
   }
 
-  public function adduser(){
+  public function index(){
+      if($_POST) {
         $setting = $this->user_model;
         $validation = $this->form_validation;
         $validation->set_rules($setting->rules());
@@ -16,9 +17,11 @@ class Register extends CI_Controller {
         if ($validation->run()) {
             $setting->save();
             $this->session->set_flashData('success', 'Data already saved!');
+            return redirect('login');
         }
-        $this->load->view("register/regist");
-  }
+      }
+      $this->load->view("register/regist");
+  } 
 
   public function forgotpassword()
   {

@@ -9,7 +9,7 @@
 
 <body id="page-top">
 
-  <!-- Page Wrapper -->
+  <!-- Page Wrapper --> 
   <div id="wrapper">
 
     <!-- Sidebar -->
@@ -39,7 +39,7 @@
 
 					<div class="card-body">
 
-						<form action="<?php base_url('user/product/add') ?>" method="post" enctype="multipart/form-data" >
+						<form action="<?php base_url('products/add') ?>" method="post" enctype="multipart/form-data" >
 							<div class="form-group">
 								<label for="judul">Title*</label>
 								<input class="form-control <?php echo form_error('judul') ? 'is-invalid':'' ?>"
@@ -55,13 +55,13 @@
 				                  <div style="float:left; width: 30%;" class="controls">
 				                    <select name="genre" id="genre">
 				                      <option value="0" disabled selected>Select Genre</option>
-									    <option value="Action">Action</option>
-									    <option value="Adventure">Adventure</option>
-									    <option value="Comedy">Comedy</option>
-									    <option value="Fiction">Fiction</option>
-									    <option value="History">History</option>
-									    <option value="Horror">Horror</option>
-									    <option value="Romance">Romance</option>
+									    <option value="action">Action</option>
+									    <option value="adventure">Adventure</option>
+									    <option value="comedy">Comedy</option>
+									    <option value="fiction">Fiction</option>
+									    <option value="history">History</option>
+									    <option value="horror">Horror</option>
+									    <option value="romance">Romance</option>
 									 </select>
 									<div class="invalid-feedback">
 										<?php echo form_error('genre') ?>

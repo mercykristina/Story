@@ -26,7 +26,7 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                   </div>
-                  <form class="user" ction="<?php site_url('Login') ?>" id="form1" name="form1" method="post">
+                  <form class="user" action="<?php site_url('Login') ?>" id="form1" name="form1" method="post">
                     <div class="form-group">
                       <input type="username" class="form-control form-control-user" id="username" name="username" placeholder="Username" required />
                     </div>
@@ -47,11 +47,9 @@
                     <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login" name="login" id="login">Sign in</button>
                   </form>
                   <hr>
+                 
                   <div class="text-center">
-                    <a class="small" href="<?php echo site_url('Register/forgotpassword') ?>">Forgot Password?</a>
-                  </div>
-                  <div class="text-center">
-                    <a class="small" href="<?php echo site_url('Register/adduser') ?>">Create an Account!</a>
+                    <a class="small" href="<?php echo site_url('Register') ?>">Create an Account!</a>
                   </div>
                 </div>
               </div>

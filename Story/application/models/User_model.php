@@ -14,7 +14,7 @@ class User_model extends CI_Model
     {
         return [
             ['field' => 'nama',
-            'label' => 'Full Name',
+            'label' => 'Full Name', 
             'rules' => 'required'],
 
             ['field' => 'email',

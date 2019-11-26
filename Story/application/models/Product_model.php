@@ -12,6 +12,8 @@ class Product_model extends CI_Model
     public $penulis;
     public $tahun;
     public $genre;
+    public $id_user;
+
 
     public function rules()
     {
@@ -34,13 +36,18 @@ class Product_model extends CI_Model
 
             ['field' => 'tahun',
             'label' => 'Year',
-            'rules' => 'numeric|required'],
+            'rules' => 'required'],
         ];
     }
 
-    public function getAll()
+    public function getAll($q)
     {
-        return $this->db->get($this->_table)->result();
+        if(empty($q)){
+            return $this->db->get($this->_table)->result();
+        }else{
+            $query = "SELECT * FROM cerita WHERE judul like '%$q%' or penulis like '%$q%' or tahun like '%$q%' or genre like '%$q%'";
+            return $this->db->query($query)->result();
+        }
     }
     
     public function get_data_bykode($id_cerita) {
@@ -59,6 +66,7 @@ class Product_model extends CI_Model
         $this->tahun = $post["tahun"];
         $this->genre = $post["genre"];
         $this->image = $this->_uploadImage();
+        $this->id_user = $this->session->userdata('id_user');
         $this->db->insert($this->_table, $this);
     }
 
@@ -80,79 +88,5 @@ class Product_model extends CI_Model
     
         return "default.jpg";
     }
-
-    public function genreAction($genre){
-        $query = "SELECT cerita.id_cerita AS id_cerita, cerita.judul AS judul, cerita.genre AS genre,
-                    cerita.tahun AS tahun, cerita.image AS image FROM cerita WHERE genre='Action'";
-                    
-        return $this->db->query($query)->result();
-    }
-
-    public function genreAdventure($genre){
-        $query = "SELECT cerita.id_cerita AS id_cerita, cerita.judul AS judul, cerita.genre AS genre,
-                    cerita.tahun AS tahun, cerita.image AS image FROM cerita WHERE genre='Adventure'";
-                    
-        return $this->db->query($query)->result();
-    }
-
-    public function genreComedy($genre){
-        $query = "SELECT cerita.id_cerita AS id_cerita, cerita.judul AS judul, cerita.genre AS genre,
-                    cerita.tahun AS tahun, cerita.image AS image FROM cerita WHERE genre='Comedy'";
-                    
-        return $this->db->query($query)->result();
-    }
-
-    public function genreFiction($genre){
-        $query = "SELECT cerita.id_cerita AS id_cerita, cerita.judul AS judul, cerita.genre AS genre,
-                    cerita.tahun AS tahun, cerita.image AS image FROM cerita WHERE genre='Fiction'";
-                    
-        return $this->db->query($query)->result();
-    }
-
-    public function genreHistory($genre){
-        $query = "SELECT cerita.id_cerita AS id_cerita, cerita.judul AS judul, cerita.genre AS genre,
-                    cerita.tahun AS tahun, cerita.image AS image FROM cerita WHERE genre='History'";
-                    
-        return $this->db->query($query)->result();
-    }
-
-    public function genreHorror($genre){
-        $query = "SELECT cerita.id_cerita AS id_cerita, cerita.judul AS judul, cerita.genre AS genre,
-                    cerita.tahun AS tahun, cerita.image AS image FROM cerita WHERE genre='Horror'";
-                    
-        return $this->db->query($query)->result();
-    }
-
-    public function genreRomance($genre){
-        $query = "SELECT cerita.id_cerita AS id_cerita, cerita.judul AS judul, cerita.genre AS genre,
-                    cerita.tahun AS tahun, cerita.image AS image FROM cerita WHERE genre='Romance'";
-                    
-        return $this->db->query($query)->result();
-    }
-
-    public function tahun2019($tahun){
-        $query = "SELECT cerita.id_cerita AS id_cerita, cerita.judul AS judul, cerita.genre AS genre,
-                    cerita.tahun AS tahun, cerita.image AS image FROM cerita WHERE tahun='2019'";
-                    
-        return $this->db->query($query)->result();
-    }
-
-    public function tahun2018($tahun){
-        $query = "SELECT cerita.id_cerita AS id_cerita, cerita.judul AS judul, cerita.genre AS genre,
-                    cerita.tahun AS tahun, cerita.image AS image FROM cerita WHERE tahun='2018'";
-                    
-        return $this->db->query($query)->result();
-    }
-
-    public function tahun2017krg($tahun){
-        $query = "SELECT cerita.id_cerita AS id_cerita, cerita.judul AS judul, cerita.genre AS genre,
-                    cerita.tahun AS tahun, cerita.image AS image FROM cerita WHERE tahun='<2017'";
-                    
-        return $this->db->query($query)->result();
-    }
-
-
-    
-
 
 }

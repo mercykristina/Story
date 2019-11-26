@@ -23,7 +23,10 @@
       <div id="content">
 
         <!-- Topbar -->
-        <?php $this->load->view("user/part/navbar.php") ?>
+        <?php  $this->load->view("user/part/navbar.php") ?>
+          
+
+       
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
@@ -33,11 +36,11 @@
     				<?php foreach ($products as $product) {?>
                   <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100">
-                      <a href="#"><img class="card-img-top" src="<?=base_url();?>img/upload/<?=$product->id_cerita;?>.jpg" alt=""></a>
+                      <a href="<?=base_url();?>story/<?=$product->id_cerita;?>"><img class="card-img-top" src="<?=base_url();?>img/upload/<?=$product->image;?>" alt=""></a>
                       <div class="card-body">
                       	
                         <h4 class="card-title">
-                          <a href="<?=base_url();?>Products/post_details/<?=$product->id_cerita;?>"><?=$product->judul;?></a>
+                          <a href="<?=base_url();?>story/<?=$product->id_cerita;?>"><?=$product->judul;?></a>
                         </h4>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -47,6 +50,7 @@
 
                         <p><?=$product->genre;?></p>
                         <p><?=$product->tahun;?></p>
+                        <p><?=$product->penulis;?></p>
                         
                         
                       </div>

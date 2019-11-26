@@ -21,7 +21,7 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
               </div>
-              <form class="user"action="<?php base_url('Register/adduser') ?>" method="post" enctype="multipart/form-data" >
+              <form class="user" action="<?php base_url('Register') ?>" method="post" enctype="multipart/form-data" >
                 
                 <div class="form-group">
                   <input type="nama" class="form-control form-control-user <?php echo form_error('nama') ? 'is-invalid':'' ?>r" name="nama" placeholder="Fullname">

@@ -2,7 +2,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo site_url('user') ?>">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo site_url('') ?>">
         <div class="sidebar-brand-icon">
           <img src="<?php echo base_url('img/logo.png') ?>" style="width:80px; margin-right:20px">
         </div>
@@ -12,16 +12,16 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
+      <!--<li class="nav-item <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
         <a class="nav-link" href="<?php echo site_url('user') ?>">
           <i class="fas fa-fw fa-home"></i>
           <span>Home</span></a>
-      </li>
+      </li>-->
 
       <li class="nav-item">
         <a class="nav-link" href="#">
           <i class="fas fa-fw fa-check"></i>
-          <span>Recommendation For You</span></a>
+          <span>Recommendation For You</span></a> 
         </a>
       </li>
 
@@ -29,7 +29,7 @@
       <hr class="sidebar-divider">
 
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Products') ?>">
+        <a class="nav-link" href="<?php echo site_url('') ?>">
           <i class="fas fa-fw fa-cloud"></i>
           <span>Story</span></a>
         </a>
@@ -44,13 +44,13 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Genre</h6>
-            <a class="collapse-item" href="<?php echo site_url('Products/genreAction') ?>">Action</a>
-            <a class="collapse-item" href="<?php echo site_url('Products/genreAdventure') ?>">Adventure</a>
-            <a class="collapse-item" href="<?php echo site_url('Products/genreComedy') ?>">Comedy</a>
-            <a class="collapse-item" href="<?php echo site_url('Products/genreFiction') ?>">Fiction</a>
-            <a class="collapse-item" href="<?php echo site_url('Products/genreHistory') ?>">History</a>
-            <a class="collapse-item" href="<?php echo site_url('Products/genreHorror') ?>">Horror</a>
-            <a class="collapse-item" href="<?php echo site_url('Products/genreRomance') ?>">Romance</a>
+            <a class="collapse-item" href="<?php echo site_url('/?q=action') ?>">Action</a>
+            <a class="collapse-item" href="<?php echo site_url('/?q=adventure') ?>">Adventure</a>
+            <a class="collapse-item" href="<?php echo site_url('/?q=comedy') ?>">Comedy</a>
+            <a class="collapse-item" href="<?php echo site_url('/?q=fiction') ?>">Fiction</a>
+            <a class="collapse-item" href="<?php echo site_url('/?q=history') ?>">History</a>
+            <a class="collapse-item" href="<?php echo site_url('/?q=horror') ?>">Horror</a>
+            <a class="collapse-item" href="<?php echo site_url('/?q=romance') ?>">Romance</a>
           </div>
         </div>
       </li>
@@ -64,9 +64,9 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Years</h6>
-            <a class="collapse-item" href="<?php echo site_url('Products/tahun2019') ?>">2019</a>
-            <a class="collapse-item" href="<?php echo site_url('Products/tahun2018') ?>">2018</a>
-            <a class="collapse-item" href="<?php echo site_url('Products/tahun2017krg') ?>">< 2017</a>
+            <a class="collapse-item" href="<?php echo site_url('/?q=2019') ?>">2019</a>
+            <a class="collapse-item" href="<?php echo site_url('/?q=2018') ?>">2018</a>
+            <a class="collapse-item" href="<?php echo site_url('/?q=<2017') ?>">< 2017</a>
           </div>
         </div>
       </li>
@@ -76,10 +76,10 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Products/add') ?>">
-          <i class="fas fa-fw fa-pen"></i>
-          <span>Create Story</span></a>
-        </a>
+         <a class="nav-link" href="<?php  echo site_url('Products/add') ?>">
+            <i class="fas fa-fw fa-pen"></i>
+            <span>Create Story</span></a>
+          </a>
       </li>
 
       
