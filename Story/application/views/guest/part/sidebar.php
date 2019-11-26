@@ -36,14 +36,14 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header" href="">Genre</h6>
-            <a class="collapse-item" href="">Action</a>
-            <a class="collapse-item" href="">Adventure</a>
-            <a class="collapse-item" href="cards.html">Comedy</a>
-            <a class="collapse-item" href="cards.html">Fiction</a>
-            <a class="collapse-item" href="cards.html">History</a>
-            <a class="collapse-item" href="cards.html">Horror</a>
-            <a class="collapse-item" href="cards.html">Romance</a>
+            <h6 class="collapse-header">Genre</h6>
+            <a class="collapse-item" href="<?php echo site_url('Products_guest/genreAction') ?>">Action</a>
+            <a class="collapse-item" href="<?php echo site_url('Products_guest/genreAdventure') ?>">Adventure</a>
+            <a class="collapse-item" href="<?php echo site_url('Products_guest/genreComedy') ?>">Comedy</a>
+            <a class="collapse-item" href="<?php echo site_url('Products_guest/genreFiction') ?>">Fiction</a>
+            <a class="collapse-item" href="<?php echo site_url('Products_guest/genreHistory') ?>">History</a>
+            <a class="collapse-item" href="<?php echo site_url('Products_guest/genreHorror') ?>">Horror</a>
+            <a class="collapse-item" href="<?php echo site_url('Products_guest/genreRomance') ?>">Romance</a>
           </div>
         </div>
       </li>
@@ -57,12 +57,9 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Years</h6>
-            <a class="collapse-item" href="utilities-color.html">2019</a>
-            <a class="collapse-item" href="utilities-border.html">2018</a>
-            <a class="collapse-item" href="utilities-animation.html">2017</a>
-            <a class="collapse-item" href="utilities-other.html">2016</a>
-            <a class="collapse-item" href="utilities-other.html">2015</a>
-            <a class="collapse-item" href="utilities-other.html">< 2015</a>
+            <a class="collapse-item" href="<?php echo site_url('Products_guest/tahun2019') ?>">2019</a>
+            <a class="collapse-item" href="<?php echo site_url('Products_guest/tahun2018') ?>">2018</a>
+            <a class="collapse-item" href="<?php echo site_url('Products_guest/tahun2017krg') ?>">< 2017</a>
           </div>
         </div>
       </li>

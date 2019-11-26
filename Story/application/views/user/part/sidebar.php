@@ -30,24 +30,24 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-globe"></i>
           <span>Genre</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Genre</h6>
-            <a class="collapse-item" href="utilities-color.html">Action</a>
-            <a class="collapse-item" href="utilities-border.html">Adventure</a>
-            <a class="collapse-item" href="utilities-animation.html">Comedy</a>
-            <a class="collapse-item" href="utilities-other.html">Fiction</a>
-            <a class="collapse-item" href="utilities-other.html">History</a>
-            <a class="collapse-item" href="utilities-other.html">Horror</a>
-            <a class="collapse-item" href="utilities-other.html">Romance</a>
+            <a class="collapse-item" href="<?php echo site_url('Products/genreAction') ?>">Action</a>
+            <a class="collapse-item" href="<?php echo site_url('Products/genreAdventure') ?>">Adventure</a>
+            <a class="collapse-item" href="<?php echo site_url('Products/genreComedy') ?>">Comedy</a>
+            <a class="collapse-item" href="<?php echo site_url('Products/genreFiction') ?>">Fiction</a>
+            <a class="collapse-item" href="<?php echo site_url('Products/genreHistory') ?>">History</a>
+            <a class="collapse-item" href="<?php echo site_url('Products/genreHorror') ?>">Horror</a>
+            <a class="collapse-item" href="<?php echo site_url('Products/genreRomance') ?>">Romance</a>
           </div>
         </div>
       </li>
-  
+
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
@@ -57,12 +57,9 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Years</h6>
-            <a class="collapse-item" href="utilities-color.html">2019</a>
-            <a class="collapse-item" href="utilities-border.html">2018</a>
-            <a class="collapse-item" href="utilities-animation.html">2017</a>
-            <a class="collapse-item" href="utilities-other.html">2016</a>
-            <a class="collapse-item" href="utilities-other.html">2015</a>
-            <a class="collapse-item" href="utilities-other.html">< 2015</a>
+            <a class="collapse-item" href="<?php echo site_url('Products/tahun2019') ?>">2019</a>
+            <a class="collapse-item" href="<?php echo site_url('Products/tahun2018') ?>">2018</a>
+            <a class="collapse-item" href="<?php echo site_url('Products/tahun2017krg') ?>">< 2017</a>
           </div>
         </div>
       </li>
