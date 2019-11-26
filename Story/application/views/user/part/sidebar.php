@@ -18,12 +18,19 @@
           <span>Home</span></a>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-fw fa-check"></i>
+          <span>Recommendation For You</span></a>
+        </a>
+      </li>
+
       <!-- Divider -->
       <hr class="sidebar-divider">
 
       <li class="nav-item">
         <a class="nav-link" href="<?php echo site_url('Products') ?>">
-          <i class="fas fa-fw fa-table"></i>
+          <i class="fas fa-fw fa-cloud"></i>
           <span>Story</span></a>
         </a>
       </li>
