@@ -88,10 +88,7 @@
 				                      <option value="0" disabled selected>Select Year</option>
 									    <option value="2019">2019</option>
 									    <option value="2018">2018</option>
-									    <option value="2017">2017</option>
-									    <option value="2016">2016</option>
-									    <option value="2015">2015</option>
-									    <option value="<2015"><2015</option>
+									    <option value="<2017">< 2017</option>
 									 </select>
 									<div class="invalid-feedback">
 										<?php echo form_error('tahun') ?>
@@ -121,7 +118,7 @@
 							<div class="form-group">
 								<label for="cerita">Story*</label>
 								<textarea class="form-control <?php echo form_error('cerita') ? 'is-invalid':'' ?>"
-								 name="cerita" placeholder="Story"></textarea>
+								 name="cerita" placeholder="Story" style="height:200px"></textarea>
 								<div class="invalid-feedback">
 									<?php echo form_error('cerita') ?>
 								</div>
