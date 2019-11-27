@@ -19,7 +19,7 @@
       </li>-->
 
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="<?php echo site_url('recommended') ?>">
           <i class="fas fa-fw fa-check"></i>
           <span>Recommendation For You</span></a> 
         </a>

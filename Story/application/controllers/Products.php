@@ -14,6 +14,38 @@ class Products extends CI_Controller
         $this->load->model("Product_model"); 
         $this->load->model("Rating_model");
         $this->load->library('form_validation');
+        $this->load->library('recommend');
+    }
+
+    public function recommended()
+    {
+        if(empty($this->session->userdata('id_user'))) {
+          $this->session->set_flashdata('flash_data', 'Please Login First!');
+          return redirect('login');
+        }
+
+        $matrix=array();
+        $rating = $this->Rating_model->getAll();
+
+        foreach ($rating as $item) {
+            $matrix[$item->id_user][$item->id_cerita] = $item->rating;
+        }
+
+        /*echo "<pre>";
+        print_r($matrix);
+
+        echo "</pre>";
+    
+        echo "get recommendasi untuk user ".$this->session->userdata('id_user');
+
+        echo "<pre>";
+        print_r($this->recommend->getRecommendations($matrix, $this->session->userdata('id_user')));
+        echo "</pre>";*/
+        $l_recom = $this->recommend->getRecommendations($matrix, $this->session->userdata('id_user'));
+        $list = array_keys($l_recom);
+        
+        $data["products"] = $this->Product_model->getAllRecommend($list);
+        $this->load->view("user/product/list", $data);
     }
 
     public function index()

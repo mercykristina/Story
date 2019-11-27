@@ -42,17 +42,26 @@ class Product_model extends CI_Model
 
     public function getAll($q)
     {
+        
         if(empty($q)){
-            return $this->db->get($this->_table)->result();
+            $query = "SELECT C.id_cerita,C.judul,C.image,C.tahun,C.penulis,C.genre,AVG(rating) as avg_rat FROM cerita C lEFT JOIN rating R ON C.id_cerita=R.id_cerita GROUP BY C.id_cerita";
+            return $this->db->query($query)->result();
         }else{
-            $query = "SELECT * FROM cerita WHERE judul like '%$q%' or penulis like '%$q%' or tahun like '%$q%' or genre like '%$q%'";
+            $query = "SELECT C.id_cerita,C.judul,C.image,C.tahun,C.penulis,C.genre,AVG(rating) as avg_rat FROM cerita C LEFT JOIN rating R ON C.id_cerita=R.id_cerita WHERE C.judul like '%$q%' or C.penulis like '%$q%' or C.tahun like '%$q%' or C.genre like '%$q%' GROUP BY C.id_cerita";
             return $this->db->query($query)->result();
         }
     }
+ 
+
+    public function getAllRecommend($list){
+         $imp = implode(',', $list);
+         $query = "SELECT C.id_cerita,C.judul,C.sinopsis,C.cerita,C.image,C.tahun,C.penulis,C.genre,AVG(rating) as avg_rat FROM cerita C LEFT JOIN rating R ON C.id_cerita=R.id_cerita WHERE C.id_cerita IN ('$imp') GROUP BY C.id_cerita";
+         return $this->db->query($query)->result();
+    }
     
     public function get_data_bykode($id_cerita) {
-        $query = $this->db->get_where('cerita', array('id_cerita' => $id_cerita));
-        return $query->result();
+         $query = "SELECT C.id_cerita,C.judul,C.sinopsis,C.cerita,C.image,C.tahun,C.penulis,C.genre,AVG(rating) as avg_rat FROM cerita C LEFT JOIN rating R ON C.id_cerita=R.id_cerita WHERE C.id_cerita='$id_cerita' GROUP BY C.id_cerita";
+            return $this->db->query($query)->result();
     }
 
     public function save()
@@ -76,7 +85,7 @@ class Product_model extends CI_Model
     $config['allowed_types']        = 'gif|jpg|png';
     $config['file_name']            = $this->id_cerita;
     $config['overwrite']            = true;
-    $config['max_size']             = 2048; // 1MB
+    $config['max_size']             = 4096; // 1MB
     // $config['max_width']            = 1024;
     // $config['max_height']           = 768;
 

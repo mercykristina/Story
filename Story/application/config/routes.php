@@ -55,6 +55,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['story/(:any)'] = "products/post_details/$1";
 
 $route['story/read/(:any)'] = "products/readnow/$1";
+$route['recommended'] = "products/recommended";
 
 
 $route['about'] = 'welcome/about';

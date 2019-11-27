@@ -8,7 +8,7 @@ class User_model extends CI_Model
     public $nama;
     public $email;
     public $username;
-    public $password;
+    public $password; 
 
     public function rules()
     {
@@ -44,12 +44,20 @@ class User_model extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->id_user = uniqid();
-        $this->nama = $post["nama"];
-        $this->email = $post["email"];
-        $this->username = $post["username"];
-        $this->password = md5($post["password"]);
-        $this->db->insert($this->_table, $this);
+        if(empty($this->db->get_where($this->_table, ["username" => $post["username"]])->result())){
+            $post = $this->input->post();
+            $this->id_user = uniqid();
+            $this->nama = $post["nama"];
+            $this->email = $post["email"];
+            $this->username = $post["username"];
+            $this->password = md5($post["password"]);
+            $this->db->insert($this->_table, $this);
+            return true;
+        }else{
+            return false;
+        }
+
+     
     }
 
     public function delete($id)

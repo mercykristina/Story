@@ -53,11 +53,13 @@
               <h4 class="my-3" style="color:DodgerBlue;"><?=$data->genre;?></h4>
               <h4 class="my-3" style="color:DodgerBlue;"><?=$data->tahun;?></h4>
 
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
+              <span class="fa fa-star  <?php if($data->avg_rat >=1){echo 'checked';}?>"></span>
+              <span class="fa fa-star <?php if($data->avg_rat >=2){echo 'checked';}?>"></span>
+              <span class="fa fa-star <?php if($data->avg_rat >=3){echo 'checked';}?>"></span>
+              <span class="fa fa-star <?php if($data->avg_rat >=4){echo 'checked';}?>"></span>
+              <span class="fa fa-star <?php if($data->avg_rat >=5){echo 'checked';}?>"></span>
+
+           
               <br>
               <br>
               <a href="<?=base_url();?>story/read/<?=$data->id_cerita;?>" class="btn btn-primary" role="button">Read Now</a>

@@ -56,7 +56,7 @@
            
               <?php if ($this->session->flashdata('success')): ?>
                 <div class="alert alert-success">
-                <strong>Register Success!</strong>
+                <strong>Register Failed!</strong>
                 <?php echo $this->session->flashdata('success'); ?>
                 </div>
               <?php endif; ?>

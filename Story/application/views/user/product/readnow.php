@@ -73,11 +73,14 @@ input[type=submit]:hover {
               <h1 class="font-weight-light" style="color:MidnightBlue;"><?=$data->judul;?></h1>
               <h4 class="my-3" style="color:DodgerBlue;">By <?=$data->penulis;?></h4>
               <h4 class="my-3" style="color:DodgerBlue;"><?=$data->tahun;?></h4>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
+              
+               <span class="fa fa-star  <?php if($data->avg_rat >=1){echo 'checked';}?>"></span>
+              <span class="fa fa-star <?php if($data->avg_rat >=2){echo 'checked';}?>"></span>
+              <span class="fa fa-star <?php if($data->avg_rat >=3){echo 'checked';}?>"></span>
+              <span class="fa fa-star <?php if($data->avg_rat >=4){echo 'checked';}?>"></span>
+              <span class="fa fa-star <?php if($data->avg_rat >=5){echo 'checked';}?>"></span>
+
+  
 
               <div>
                 <br>

@@ -13,7 +13,7 @@ class Rating_model extends CI_Model
     public function rules()
     {
         return [
-            ['field' => 'rating',
+            ['field' => 'rating', 
             'label' => 'Rating',
             'rules' => 'required']
         ];

@@ -15,9 +15,12 @@ class Register extends CI_Controller {
         $validation->set_rules($setting->rules());
 
         if ($validation->run()) {
-            $setting->save();
-            $this->session->set_flashData('success', 'Data already saved!');
-            return redirect('login');
+            if($setting->save()){
+              $this->session->set_flashData('success', 'Data already saved!');
+              return redirect('login');
+            }else{
+               $this->session->set_flashData('success', 'Username sudah digunakan');
+            }
         }
       }
       $this->load->view("register/regist");

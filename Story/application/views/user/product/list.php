@@ -42,16 +42,17 @@
                         <h4 class="card-title">
                           <a href="<?=base_url();?>story/<?=$product->id_cerita;?>"><?=$product->judul;?></a>
                         </h4>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
+
+                        <span class="fa fa-star  <?php if($product->avg_rat >=1){echo 'checked';}?>"></span>
+                        <span class="fa fa-star <?php if($product->avg_rat >=2){echo 'checked';}?>"></span>
+                        <span class="fa fa-star <?php if($product->avg_rat >=3){echo 'checked';}?>"></span>
+                        <span class="fa fa-star <?php if($product->avg_rat >=4){echo 'checked';}?>"></span>
+                        <span class="fa fa-star <?php if($product->avg_rat >=5){echo 'checked';}?>"></span>
 
                         <p><?=$product->genre;?></p>
                         <p><?=$product->tahun;?></p>
                         <p><?=$product->penulis;?></p>
-                        
+              
                         
                       </div>
                     </div>
