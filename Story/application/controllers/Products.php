@@ -43,7 +43,10 @@ class Products extends CI_Controller
         echo "</pre>";*/
         $l_recom = $this->recommend->getRecommendations($matrix, $this->session->userdata('id_user'));
         $list = array_keys($l_recom);
-        
+        $func = function($value) {
+            return "'$value'";
+        };
+        $list = array_map($func, $list);
         $data["products"] = $this->Product_model->getAllRecommend($list);
         $this->load->view("user/product/list", $data);
     }

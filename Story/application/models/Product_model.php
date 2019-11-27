@@ -55,7 +55,7 @@ class Product_model extends CI_Model
 
     public function getAllRecommend($list){
          $imp = implode(',', $list);
-         $query = "SELECT C.id_cerita,C.judul,C.sinopsis,C.cerita,C.image,C.tahun,C.penulis,C.genre,AVG(rating) as avg_rat FROM cerita C LEFT JOIN rating R ON C.id_cerita=R.id_cerita WHERE C.id_cerita IN ('$imp') GROUP BY C.id_cerita";
+         $query = "SELECT C.id_cerita,C.judul,C.sinopsis,C.cerita,C.image,C.tahun,C.penulis,C.genre,AVG(rating) as avg_rat FROM cerita C LEFT JOIN rating R ON C.id_cerita=R.id_cerita WHERE C.id_cerita IN ($imp) GROUP BY C.id_cerita";
          return $this->db->query($query)->result();
     }
     
