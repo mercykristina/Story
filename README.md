@@ -4,8 +4,8 @@ A recommendation system for stories using collaborative filtering
 
 # Screenshot
 
-![Story](https://raw.githubusercontent.com/mercykristina/story/master/img/stories.png)
+![Story](https://raw.githubusercontent.com/mercykristina/Story/master/img/stories.PNG)
 
 
-![Recommendation](https://raw.githubusercontent.com/mercykristina/story/master/img/recommender.png)
+![Recommendation](https://raw.githubusercontent.com/mercykristina/Story/master/img/recommender.PNG)
 
